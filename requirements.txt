@@ -1,0 +1,9 @@
+selenium==4.38.0
+webdriver-manager==4.0.2
+beautifulsoup4==4.14.2
+python-dotenv==1.2.1
+selenium-stealth==1.0.6
+pydantic==2.12.4
+fastapi==0.121.2
+uvicorn==0.38.0
+requests==2.32.5
