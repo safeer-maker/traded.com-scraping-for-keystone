@@ -17,8 +17,8 @@ from webdriver_manager.chrome import ChromeDriverManager
 from selenium_stealth import stealth
 
 load_dotenv()
-TRADED_USERNAME = os.getenv("TRADED_USERNAME" )
-TRADED_PASSWORD = os.getenv("TRADED_PASSWORD" )
+TRADED_USERNAME = os.getenv("TRADED_USERNAME", "")
+TRADED_PASSWORD = os.getenv("TRADED_PASSWORD", "")
 
 THRESHOLD_PERCENTAGE = 40
 MAX_PAGES_PER_BROKER = 5
