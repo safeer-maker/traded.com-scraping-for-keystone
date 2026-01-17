@@ -82,3 +82,9 @@ async def discover_brokers_endpoint(input_data: DiscoveryInput):
 @app.get("/")
 def read_root():
     return {"message": "Traded.co API v1.5 Running"}
+
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(app, host="0.0.0.0", port=8000, reload=True)
+
+    
