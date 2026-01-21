@@ -1,4 +1,5 @@
 from fastapi import FastAPI, HTTPException
+from fastapi.responses import RedirectResponse
 from pydantic import BaseModel, HttpUrl, Field
 from typing import List, Optional
 
@@ -81,8 +82,10 @@ async def discover_brokers_endpoint(input_data: DiscoveryInput):
 
 @app.get("/")
 def read_root():
-    return {"message": "Traded.co API v1.5 Running"}
+    return RedirectResponse(url="/docs")
+
+
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)
+    uvicorn.run("main:app", host="0.0.0.0", port=8080, reload=True)
