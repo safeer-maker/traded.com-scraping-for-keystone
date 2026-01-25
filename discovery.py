@@ -184,7 +184,7 @@ def run_discovery_process(states: List[str], max_pages: int = 5) -> List[Dict[st
             state_brokers_data = []
             print(f"--- Extracting Data for {len(state_items)} profiles ---")
 
-            for i, item in enumerate(state_items[0:2], 1):  # Limiting to first 2 for testing
+            for i, item in enumerate(state_items, 1):  # Limiting to first 2 for testing
                 url = item['url']
                 print(f"[{i}/{len(state_items)}] {url}")
                 try:
