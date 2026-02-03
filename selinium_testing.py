@@ -14,7 +14,7 @@ sandbox = driver.find_element(By.NAME, "q")
 sandbox.send_keys("Selenium")
 sandbox.send_keys(Keys.RETURN)
 
-
+results = driver.find_elements(By.CSS_SELECTOR, "div.g")
 
 time.sleep(2)  # Let the user actually see something!
 
