@@ -7,12 +7,9 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException
 
-import undetected_chromedriver as uc
-
 import time
 
-# to hande captache
-
+# To handle captcha
 def solve_captcha(driver):
     try:
         # Wait for the captcha iframe to load
@@ -51,8 +48,11 @@ def captcha_args():
 
 
 # Selenium Manager automatically handles the driver setup
-driver = webdriver.Chrome()
+options = captcha_args()
+driver = webdriver.Chrome(options=options)
 
+# Using undetected_chromedriver to avoid captcha
+# driver = Chrome(options=options)
 
 driver.get("http://www.google.com")
 print(driver.title)
@@ -62,7 +62,7 @@ sandbox.send_keys("Selenium")
 sandbox.send_keys(Keys.RETURN)
 
 
-solve_captcha(driver)
+# solve_captcha(driver)
 
 results = driver.find_elements(By.CSS_SELECTOR, "div.g")
 
